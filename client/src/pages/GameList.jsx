@@ -1,0 +1,62 @@
+import React from "react";
+import NavBar from "../components/NavBar";
+import ButtonPrimary from "../components/ButtonPrimary";
+import { Link } from "react-router-dom";
+
+function GameList() {
+  return (
+    <>
+      <NavBar />
+      <div className="container-full">
+        <img
+          className="w-full h-[37.5rem] bg-cover bg-center"
+          src="bg-games.jpg"
+          alt="bg-games"
+        />
+      </div>
+      <div className="container-full bg-[#161616] w-full lg:h-[47.438rem] flex relative justify-between px-[9.375rem]">
+        <div className="pt-[5rem]">
+          <h1 className="font-bold text-5xl max-w-lg text-white mt-3 leading-[56px] mb-12">
+            Popular Games
+          </h1>
+          <div className="mt-[3.75rem] flex">
+            <div class="max-w-sm rounded-[27.56px] border shadow-md bg-[#252525] border-[#252525]">
+              <a>
+                <img
+                  class="rounded-t-[27.56px] w-full bg-center bg-cover"
+                  src="games-BGK.jpg"
+                  alt=""
+                />
+              </a>
+              <div class="p-5">
+                <a>
+                  <h5 class="mb-[0.875rem] text-[1.5rem] font-bold tracking-tight text-[#F1B03D]">
+                    Rock Scissors Paper
+                  </h5>
+                </a>
+                <p class="mb-[1.5rem] font-normal text-[#959595]">
+                  Bertandinglah dengan teman Anda dan menangkan skor tertinggi
+                </p>
+                <Link to="/gameDetail">
+                  <ButtonPrimary
+                    width={"13.75rem"}
+                    height={"46rem"}
+                    text={"Mainkan sekarang"}
+                  />
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="absolute bottom-20 pr-4 right-0">
+            <img src="dot-illustration.svg" alt="dot" />
+          </div>
+          <div className="absolute top-40 left-0">
+            <img src="eclipse-reverse.svg" alt="dot" />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default GameList;
