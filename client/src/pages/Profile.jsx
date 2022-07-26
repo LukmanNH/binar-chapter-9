@@ -48,7 +48,7 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      <div className="container-full bg-[#252525] w-full lg:h-[39.75rem] flex justify-between">
+      <div className="container-full bg-[#252525] w-full lg:h-[90vh] flex justify-between">
         <div className="pt-[6.25rem] pl-[9.375rem]">
           <div className="absolute bottom-64 left-0">
             <img src="dot-illustration.svg" alt="dot" />
