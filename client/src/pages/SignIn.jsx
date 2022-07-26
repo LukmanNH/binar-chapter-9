@@ -1,7 +1,27 @@
 import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { auth } from "../services/firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 export default function SignIn() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      alert("login successfully");
+      navigate("/");
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
   return (
     <>
       <div className="h-full bg-[#252525] flex justify-between">
@@ -22,25 +42,38 @@ export default function SignIn() {
                     <Link to="/register">Daftar</Link>
                   </h3>
                 </div>
-                <div className="pt-6 mb-4">
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Masukkan Email"
-                    className="w-[20.375rem] h-12 p-[0.875rem] rounded-[0.25rem] text-sm"
-                  />
-                </div>
-                <div>
-                  <input
-                    type="password"
-                    name="password"
-                    placeholder="Kata Sandi"
-                    className="w-[20.375rem] h-12 p-[0.875rem] rounded-[0.25rem] text-sm"
-                  />
-                </div>
-                <button className="mt-[2.25rem] w-[20.375rem] h-[2.875rem] text-white bg-[#F2C94C] py-3 rounded-[0.5rem]">
-                  MASUK
-                </button>
+                <form onSubmit={handleLogin}>
+                  <div className="pt-6 mb-4">
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Masukkan Email"
+                      value={email}
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                      }}
+                      className="w-[20.375rem] h-12 p-[0.875rem] rounded-[0.25rem] text-sm"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="password"
+                      name="password"
+                      placeholder="Kata Sandi"
+                      value={password}
+                      onChange={(e) => {
+                        setPassword(e.target.value);
+                      }}
+                      className="w-[20.375rem] h-12 p-[0.875rem] rounded-[0.25rem] text-sm"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="mt-[2.25rem] w-[20.375rem] h-[2.875rem] text-white bg-[#F2C94C] py-3 rounded-[0.5rem]"
+                  >
+                    MASUK
+                  </button>
+                </form>
                 <div className="flex items-center mt-[2.125rem]">
                   <div class="flex-grow border-t border-gray-400"></div>
                   <p className="text-xs text-[#D0D0D0] mx-4">
