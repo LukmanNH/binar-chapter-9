@@ -22,6 +22,7 @@ function SignUp() {
           email: email,
           name: name,
           phone: phone,
+          point: 0,
         });
         alert("register successfully");
         navigate("/login");
