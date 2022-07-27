@@ -9,6 +9,7 @@ import Profile from "./pages/Profile";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./services/firebase";
 import AuthContext from "./context/AuthContext";
+import LeaderBoard from "./pages/LeaderBoard";
 
 function App() {
   const [authenticatedUser, setAuthenticatedUser] = useState(null);
@@ -22,7 +23,7 @@ function App() {
     <>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin='true' />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
           rel="stylesheet"
@@ -33,6 +34,7 @@ function App() {
           <Routes>
             <Route index element={<Home />} />
             <Route path="/games" element={<GameList />} />
+            <Route path="/leaderboard" element={<LeaderBoard />} />
             <Route path="/gameDetail" element={<GameDetail />} />
             <Route path="/login" element={<SignIn />} />
             <Route path="/register" element={<SignUp />} />

@@ -20,21 +20,21 @@ function GameList() {
             Popular Games
           </h1>
           <div className="mt-[3.75rem] flex">
-            <div class="max-w-sm rounded-[27.56px] border shadow-md bg-[#252525] border-[#252525]">
+            <div className="max-w-sm rounded-[27.56px] border shadow-md bg-[#252525] border-[#252525]">
               <a>
                 <img
-                  class="rounded-t-[27.56px] w-full bg-center bg-cover"
+                  className="rounded-t-[27.56px] w-full bg-center bg-cover"
                   src="games-BGK.jpg"
                   alt=""
                 />
               </a>
-              <div class="p-5">
+              <div className="p-5">
                 <a>
-                  <h5 class="mb-[0.875rem] text-[1.5rem] font-bold tracking-tight text-[#F1B03D]">
+                  <h5 className="mb-[0.875rem] text-[1.5rem] font-bold tracking-tight text-[#F1B03D]">
                     Rock Scissors Paper
                   </h5>
                 </a>
-                <p class="mb-[1.5rem] font-normal text-[#959595]">
+                <p className="mb-[1.5rem] font-normal text-[#959595]">
                   Bertandinglah dengan teman Anda dan menangkan skor tertinggi
                 </p>
                 <Link to="/gameDetail">
