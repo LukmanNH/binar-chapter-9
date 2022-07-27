@@ -1,6 +1,7 @@
 import React from "react";
 import ButtonPrimary from "../components/ButtonPrimary";
 import NavBar from "../components/NavBar";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -20,12 +21,15 @@ export default function Home() {
           <h1 className="font-bold text-5xl max-w-lg text-white mt-3 leading-[56px] mb-12">
             Kumpulan <br /> Game-game Terbaik dan Terpopuler{" "}
           </h1>
+          <Link to='/games'>
+
           <img
             src="button_mainkan.svg"
             width={260}
             height={55}
             alt="button_main_kan"
           />
+          </Link>
         </div>
         <div>
           <img
